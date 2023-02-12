@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- #######    Modal    ######## -->
+
+    <div class="modal" id="todo_form">
+      <div class="header">
+        <div class="title">Add Your Task</div>
+        <button class="btn close-modal">&times;</button>
+      </div>
+
+      <div class="body">
+        <input type="text" id="todo_input" />
+        <input type="submit" id="todo_submit" value="Add Task" />
+      </div>
+    </div>
+
+    <!-- #######     todo       ####### -->
+
+    <div class="todo-container">
+      <div class="status" id="no_status">
+        <h1>OPEN</h1>
+        <button id="add_btn" data-target="#todo_form">+ Add Todo</button>
+        <div class="todo" draggable="true">
+          <p>
+            Finish reading intro to UI/UX <span class="close">&times;</span>
+          </p>
+        </div>
+        <div class="todo" draggable="true">
+          <p>
+            Fill out human intrest distribution form
+            <span class="close">&times;</span>
+          </p>
+        </div>
+        <div class="todo" draggable="true">
+          <p>
+            Call the bank to talk about investments
+            <span class="close">&times;</span>
+          </p>
+        </div>
+      </div>
+      <div class="status">
+        <h1>IN PROGRESS</h1>
+      </div>
+      <div class="status">
+        <h1>IN REVIEW</h1>
+        <div class="todo" draggable="true">
+          <p>Get an anniversary-gift <span class="close">&times;</span></p>
+        </div>
+      </div>
+      <div class="status">
+        <h1>DONE</h1>
+      </div>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script src="./script.js"></script>
+    <!-- <script src="./modal.js"></script> -->
+  </body>
+</html>

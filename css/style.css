@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, rgb(0, 89, 255), rgb(0, 119, 255), cyan);
+}
+
+.todo-container{
+    width: 1000px;
+    height: 90vh;
+    display: flex;
+    border: 2px solid black; 
+    background-color: aliceblue;
+}
+
+.status{
+    width: 25%;
+    background-color: #f3f3f3;
+    position: relative;
+    padding: 60px 1rem 0.5rem;
+}
+
+.status:nth-child(even)
+{
+    background-color: #3531316b;
+}
+
+.status h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-color: rgb(70, 66, 66);
+    color: #f3f3f3;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 30px;
+    
+}
+
+#add_btn{
+    padding: 0.5rem 1rem;
+    background-color: rgb(226, 157, 67);
+    outline: navy;
+    border: none;
+    width: 100%;
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#add_btn:hover{
+    background-color: #aaa;
+}
+.todo{
+    padding: 1px;
+}
+
+.todo p{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: rgb(33, 134, 218);
+    box-shadow: rgba(212, 212, 30, 0.37) 0px 0px 0px 2px, rgba(53, 35, 35, 0.63) 0px 2px 8px;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    margin: 0.5rem 0rem;
+    font-weight: bold;
+    
+}
+
+.todo p .close{
+    /* display: flex; */
+    position: absolute;
+    right: 1rem;
+    top: 0rem;
+    font-size: 2rem;
+    color: rgb(223, 27, 27);
+    /* align-items: center; */
+    cursor: pointer;
+    font-weight: bold;
+    right: 15px;
+}
+
+.todo .close:hover{
+    color: #343444;
+}
+
+
+/* Modal */
+
+
+.close-modal{
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.modal{
+    width: 450px;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 2;
+    background-color: #fff;
+}
+.modal .title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal.active{
+    top: 15%;
+}
+.modal .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+    background-color: rgba(0,0,0,0.05);
+}
+.modal .body{
+    padding: 0.75rem;
+}
+#overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.658);
+}
+#overlay.active {
+    display: block;
+}
+
+#todo_input,
+#todo_submit{
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin: 0.25rem;
+}
+
+#todo_input{
+    border: 2px solid sandybrown;
+}
+
+#todo_submit{
+    background-color: #4caf50;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border: none;
+}
+
+
+/* todo functionality */
+
+/* #no_status{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: rgb(33, 134, 218);
+    box-shadow: rgba(212, 212, 30, 0.37) 0px 0px 0px 2px, rgba(53, 35, 35, 0.63) 0px 2px 8px;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    margin: 0.5rem 0rem;
+    font-weight: bold;
+} */
