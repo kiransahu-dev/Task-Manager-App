@@ -78,7 +78,13 @@ window.onclick = (event) => {
     }
 };
 
+// time
 
+function getCurrentTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return timeString;
+}
 
 
 // TO-DO functionality############
@@ -97,7 +103,10 @@ function createTodo() {
     txt_content.innerHTML = input_val;
     todo_div.appendChild(txt_content);
 
-
+    // time
+    const taskT = document.createElement('div');
+    taskT.textContent = getCurrentTime();
+    txt_content.appendChild(taskT);
 
     // console.log(todo_div);
 
